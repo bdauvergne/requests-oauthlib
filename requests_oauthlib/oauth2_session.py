@@ -71,7 +71,7 @@ class OAuth2Session(requests.Session):
         self.auto_refresh_url = auto_refresh_url
         self.auto_refresh_kwargs = auto_refresh_kwargs or {}
         self.token_updater = token_updater
-        self._client = client or WebApplicationClient(client_id, token=token)
+        self._client = client or WebApplicationClient(client_id, access_token=token)
         self._client._populate_attributes(token or {})
 
         # Allow customizations for non compliant providers through various
